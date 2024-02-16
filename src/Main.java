@@ -1089,6 +1089,8 @@
 
 // Collections
 
+import com.sun.source.tree.Tree;
+
 import java.util.*;
 import java.util.ArrayList;
 
@@ -1103,11 +1105,103 @@ class Collection{
         l1.add("L1 DATA");
         l1.add(l);
 
-        System.out.println(l);
-        System.out.println(l1);
+        System.out.println("************** ARRAY LIST ********************");
+
+        System.out.println("L " + l);
+        System.out.println("L1 " + l1);
 
         l1.add(1,"NEW");
-        System.out.println(l1);
+        System.out.println("L1 " + l1);
+
+        ArrayList l3 = new ArrayList();
+        l3.add("String");
+        l3.add(1);
+        l3.add(3);
+
+        System.out.println("L3 " + l3);
+        System.out.println("Contains " + l3.contains("String"));
+        System.out.println("Index of " + l3.indexOf(3));
+        System.out.println("Size of " + l3.size());
+
+        l3.ensureCapacity(1);
+        l3.trimToSize();
+        l3.clear();
+
+        System.out.println("l3 " + l3);
+
+        System.out.println("************** LINKED LIST ********************");
+
+        LinkedList ll = new LinkedList();
+        ll.add(1);
+        ll.add(2);
+        ll.add(3);
+        ll.add("String");
+        System.out.println("Linked list " + ll);
+
+
+        ll.addFirst(0);
+        ll.addLast(1000);
+        ll.add(2,100);
+        System.out.println("Linked list " + ll);
+        System.out.println("Peek " + ll.peek());
+        System.out.println("Peek last " + ll.peekLast());
+        System.out.println("Linked list " + ll);
+
+        ll.poll();
+        System.out.println("Linked list " + ll);
+
+        LinkedList ll1 = new LinkedList();
+        ll1.add(1);
+        ll1.add(2);
+        ll1.add(3);
+        System.out.println("LL1 " + ll1);
+        System.out.println("get " + ll1.get(1));
+        System.out.println("getFirst " + ll1.getFirst());
+        System.out.println("getLast " + ll1.getLast());
+        ll1.push(4);
+        System.out.println("LL1 " + ll1);
+        ll1.pop();
+        System.out.println("LL1 " + ll1);
+
+        System.out.println("************** ARRAY  DEQUE ********************");
+
+        ArrayDeque ad = new ArrayDeque();
+        ad.add(1);
+        ad.add(2);
+        System.out.println("ad " + ad);
+        ad.addFirst(0);
+        ad.addLast(10);
+        System.out.println("ad " + ad);
+        ad.offer(12);
+        ad.offerFirst(12);
+        ad.offerLast(123);
+        System.out.println("offer " + ad);
+
+        System.out.println("************** PRIORITY QUEUE ********************");
+
+        PriorityQueue pq = new PriorityQueue();
+        pq.add(1);
+        pq.add(2);
+        pq.add(3);
+        pq.add(4);
+        pq.add(5);
+        pq.add(6);
+        System.out.println("PQ " + pq);
+
+        System.out.println("************** TREE SET ********************");
+
+        TreeSet ts = new TreeSet();
+        ts.add(3);
+        ts.add(24);
+        ts.add(52);
+        ts.add(35);
+        System.out.println("ts " + ts);
+        System.out.println("higher " + ts.higher(25));
+        System.out.println("lower " + ts.lower(30));
+        System.out.println("contains " + ts.contains(30));
+        System.out.println("ceiling " + ts.ceiling(30));
+        System.out.println("floor " + ts.floor(30));
+
     }
 }
 
