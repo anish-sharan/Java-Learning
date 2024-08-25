@@ -1098,6 +1098,8 @@ class Collection{
     public static void main(String[] args){
         ArrayList l = new ArrayList();
         ArrayList l1 = new ArrayList();
+
+//        every time array list size is increased by n n/2 +1
         l.add(100);
         l.add(200);
         l.add("String");
@@ -1201,6 +1203,342 @@ class Collection{
         System.out.println("contains " + ts.contains(30));
         System.out.println("ceiling " + ts.ceiling(30));
         System.out.println("floor " + ts.floor(30));
+
+        System.out.println("************** LIST ********************");
+
+        List<Integer> list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        System.out.println("list " + list);
+
+        list.add(2,50);
+
+        System.out.println("add at index" + list);
+
+        List<Integer> newList = new ArrayList();
+
+        newList.add(10);
+        newList.add(20);
+        newList.add(30);
+
+        System.out.println("new list " + newList);
+
+        list.addAll(newList);
+
+        System.out.println("Add all function"+ list);
+
+        System.out.println(list.get(2));
+
+        list.remove(1);
+
+        System.out.println("list " + list);
+
+        list.remove(Integer.valueOf(50));
+
+        System.out.println("list " + list);
+
+        list.set(1,1000);
+        System.out.println("list " + list);
+
+        System.out.println("contains " + list.contains(1000));
+
+        for(int i=0;i<list.size();i++){
+            System.out.println("for " + list.get(i));
+        }
+
+        for (Integer integer : list) {
+            System.out.println("for each "+ integer);
+        }
+
+        Iterator<Integer> it = list.iterator();
+        while(it.hasNext()){
+            System.out.println("Iterator " + it.next());
+        }
+
+        list.clear();
+        System.out.println("list " + list);
+
+        System.out.println("****** STACK *******");
+        Stack<Integer> st = new Stack<>();
+        st.push(1);
+        st.push(2);
+        st.push(3);
+
+        System.out.println(st);
+
+        System.out.println("PEEK : " + st.peek());
+
+        st.pop();
+
+        System.out.println(st);
+
+        System.out.println("****** LINKED LIST *******");
+
+        Queue<Integer> linkedL = new LinkedList<>();
+
+        linkedL.offer(1);
+        linkedL.offer(2);
+        linkedL.offer(3);
+
+        System.out.println(linkedL);
+
+        System.out.println(linkedL.poll());
+
+        System.out.println(linkedL);
+
+        System.out.println(linkedL.peek());
+
+        System.out.println("****** PRIORITY QUEUE *******");
+
+        PriorityQueue<Integer> priorityQ = new PriorityQueue<>();
+
+        priorityQ.offer(103);
+        priorityQ.offer(233);
+        priorityQ.offer(31);
+
+        System.out.println(priorityQ);
+
+        priorityQ.poll();
+
+        System.out.println(priorityQ);
+        System.out.println(priorityQ.peek());
+
+        PriorityQueue<Integer> rpq = new PriorityQueue<>(Comparator.reverseOrder());
+
+        rpq.offer(103);
+        rpq.offer(233);
+        rpq.offer(31);
+
+        System.out.println(rpq);
+
+        rpq.poll();
+
+        System.out.println(rpq);
+        System.out.println(rpq.peek());
+
+        System.out.println("****** DEQUE  *******");
+
+        ArrayDeque<Integer> adq = new ArrayDeque<>();
+
+        adq.offer(11);
+
+        System.out.println(adq);
+
+        adq.offerFirst(121);
+
+        System.out.println(adq);
+
+        adq.offerLast(3);
+        adq.offerLast(66);
+
+        System.out.println(adq);
+
+        System.out.println("peek -  " + adq.peek());
+        System.out.println("peekFirst - " + adq.peekFirst());
+        System.out.println("peepeekLast - " + adq.peekLast());
+
+        System.out.println("poll -  " + adq.poll() + " - " + adq);
+        System.out.println("pollFirst - " + adq.pollFirst() + " - " + adq);
+        System.out.println("pollLast - " + adq.pollLast() + " - " + adq);
+
+        System.out.println("****** HASH SET  *******");
+
+        Set<Integer>  hashSet = new HashSet<>();
+        hashSet.add(10);
+        hashSet.add(33);
+        hashSet.add(140);
+        hashSet.add(140);
+        hashSet.add(140);
+
+        System.out.println(hashSet);
+
+        hashSet.remove(10);
+
+        System.out.println(hashSet);
+
+        System.out.println(hashSet.contains(33));
+
+        System.out.println(hashSet.isEmpty());
+
+        System.out.println(hashSet.size());
+
+        hashSet.clear();
+
+        System.out.println(hashSet);
+
+
+        System.out.println("****** LINKED HASH SET  *******");
+
+        Set<Integer>  linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.add(10);
+        linkedHashSet.add(33);
+        linkedHashSet.add(140);
+        linkedHashSet.add(140);
+        linkedHashSet.add(140);
+
+        System.out.println(linkedHashSet);
+
+        linkedHashSet.remove(10);
+
+        System.out.println(linkedHashSet);
+
+        System.out.println(linkedHashSet.contains(33));
+
+        System.out.println(linkedHashSet.isEmpty());
+
+        System.out.println(linkedHashSet.size());
+
+        linkedHashSet.clear();
+
+        System.out.println(linkedHashSet);
+
+
+        System.out.println("****** TREE HASH SET  *******");
+
+        Set<Integer>  treeHashSet = new TreeSet<>();
+        treeHashSet.add(10);
+        treeHashSet.add(33);
+        treeHashSet.add(140);
+        treeHashSet.add(140);
+        treeHashSet.add(140);
+
+        System.out.println(treeHashSet);
+
+        linkedHashSet.remove(10);
+
+        System.out.println(treeHashSet);
+
+        System.out.println(treeHashSet.contains(33));
+
+        System.out.println(treeHashSet.isEmpty());
+
+        System.out.println(treeHashSet.size());
+
+        treeHashSet.clear();
+
+        System.out.println(treeHashSet);
+
+        System.out.println("****** HASH MAP  *******");
+
+        Map<String, Integer> map = new HashMap<>();
+
+        map.put("One",1);
+        map.put("Two",2);
+        map.put("Three",3);
+
+
+        System.out.println(map);
+
+        map.put("Three",30);
+
+        System.out.println(map);
+
+        map.putIfAbsent("Four", 4);
+
+        System.out.println(map);
+
+        map.putIfAbsent("Four", 40);
+
+        System.out.println(map);
+
+        for(Map.Entry<String,Integer> e: map.entrySet()){
+            System.out.println(e + " - " + e.getValue()+ " - " + e.getKey());
+        }
+
+        for(String key:  map.keySet()){
+            System.out.println(key);
+        }
+
+        System.out.println(map.containsKey(3));
+
+        System.out.println(map.isEmpty());
+
+        map.clear();
+
+        System.out.println(map);
+
+        System.out.println("****** TREE MAP  *******");
+
+        System.out.println("****** TREE MAP  *******");
+
+        Map<String, Integer> treeMap = new TreeMap<>();
+
+        treeMap.put("One", 1);
+        treeMap.put("Two", 2);
+        treeMap.put("Three", 3);
+
+        System.out.println(treeMap);
+
+        treeMap.put("Three", 30);
+
+        System.out.println(treeMap);
+
+        treeMap.putIfAbsent("Four", 4);
+
+        System.out.println(treeMap);
+
+        treeMap.putIfAbsent("Four", 40);
+
+        System.out.println(treeMap);
+
+        for (Map.Entry<String, Integer> e : treeMap.entrySet()) {
+            System.out.println(e + " - " + e.getValue() + " - " + e.getKey());
+        }
+
+        for (String key : treeMap.keySet()) {
+            System.out.println(key);
+        }
+
+        System.out.println(treeMap.containsKey("Three")); // Corrected
+
+        System.out.println(treeMap.isEmpty());
+
+        treeMap.clear();
+
+        System.out.println(treeMap);
+
+        System.out.println("********************* Arrays CLASS **********************");
+
+        int[] a = {1,2,3,4,5,6,7};
+        int index = Arrays.binarySearch(a, 4);
+        System.out.println(index);
+
+        Integer[] listOfNumbers = {1,23,30,4,5,10,7};
+        Arrays.sort(listOfNumbers);
+        for(int i: listOfNumbers){
+            System.out.print(i + " ");
+        }
+
+        System.out.println("\n");
+
+        Arrays.fill(a,10);
+        for(int i: a){
+            System.out.print(i + " ");
+        }
+
+        System.out.println("\n********************* COLLECTIONS CLASS **********************");
+
+        List<Integer> num = new ArrayList<>();
+        num.add(11);
+        num.add(21);
+        num.add(31);
+
+        System.out.println(num);
+        System.out.println("Minimum : " + Collections.min(num));
+        System.out.println("Maximum : " + Collections.max(num));
+        System.out.println("Frequency : " + Collections.frequency(num, 11));
+
+        Collections.sort(num);
+
+        System.out.println(num);
+
+        Collections.sort(num,Comparator.reverseOrder());
+        System.out.println(num);
+
+
+
 
     }
 }
